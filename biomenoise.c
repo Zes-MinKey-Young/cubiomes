@@ -1462,9 +1462,12 @@ int climateToBiome(int mc, const uint64_t np[6], uint64_t *dat)
     const BiomeTree *bt;
     int idx;
 
+    // THAT IS A LECTURE:
+    // When you patch a newer version, do not forget to put an 'else'
+    // here after you add the new biome tree.
     if (mc >= MC_1_21_5)
         bt = &btree21_11;
-    if (mc >= MC_1_21_WD)
+    else if (mc >= MC_1_21_WD)
         bt = &btree21wd;
     else if (mc >= MC_1_20_6)
         bt = &btree20;
